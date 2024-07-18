@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/display.css">
+<header id="myHead"></header>
+</head>
+
+<body>
+    <div>
+    <form id="search" action="http://127.0.0.1:5000/event_search_title" method="POST" onsubmit="search(event)">
+            <label for="title">Iskanje (naslov, opis, žanra, datum, mesto):</label>
+            <input type="text" id="title" name="title" required>
+            <button type="submit">Išči</button>
+        </form>
+    </div>
+    <div>
+        <form action="http://127.0.0.1:5000/order_by" method="POST" onsubmit="order_by(event)">
+            <button type="submit">Razvrsti po:</button>
+            <select class="custom-select" name="order" id="order">
+                <option value="date_soon">Datum kmalu</option>
+                <option value="date_distant">Datum oddaljeni</option>
+                <option value="st_interested">Število zainteresiranih</option>
+            </select>
+        </form>
+    </div>
+    <div id="data_container"></div>
+</body>
+</html>
+<script src="../javascript/header.js"></script>
+<script src="../javascript/fetch_and_display_events.js"></script>
+<script src="../javascript/search_events.js"></script>
+<script src="../javascript/order_by.js"></script>
+<script src="../javascript/session.js"></script>

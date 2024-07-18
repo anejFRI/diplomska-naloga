@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dodaj žanro</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/create.css">
+    <header id="myHead"></header>
+</head>
+<body>
+    <form id="create_genre" action="http://127.0.0.1:5000/create_genre" method="POST" onsubmit="genre_creation(event)">
+        <input placeholder="Ime žanre" type="text" id="title" name="title" required>
+        <br>
+        <textarea placeholder="Opis" type="textarea" id="description" name="description" rows="7" cols="50" required></textarea>
+        <br>
+        <input placeholder="Primer (vdelana koda od Spotify Soundcloud)" type="text" id="example" name="example">
+        <br>
+        <button type="submit">Dodaj</button>
+    </form>
+</body>
+</html>
+
+<script src="../javascript/header.js"></script>
+<script src="../javascript/create_genre.js"></script>
+
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prijava</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/create.css">
+</head>
+<body>
+    <header id="myHead"></header>
+    <form id="login" action="http://127.0.0.1:5000/login_users" method="POST" onsubmit="handleSubmit(event)">
+        <label for="username">Uporabniško ime</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Geslo</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Vpis</button>
+    </form>
+</body>
+</html>
+<script src="../javascript/header.js"></script>
+<script src="../javascript/login_user.js"></script>

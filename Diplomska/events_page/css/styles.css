@@ -1,0 +1,119 @@
+body {
+    padding-top: 60px; /* Adjust based on the height of your header */
+    font-size: 22px; /* Set the base font size */
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('fonts/Montserrat-Regular.ttf') format('truetype');
+}
+
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+#myHead {
+    position: fixed; /* Fixed position to keep it at the top */
+    top: 0; /* Align to the top of the viewport */
+    left: 0; /* Start from the left edge */
+    width: 100%; /* Full width of the viewport */
+    z-index: 1000; /* Ensure it stays above other content */
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Center the items horizontally */
+}
+
+button {
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #1A1A1A;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0;
+    min-height: 30px;
+    min-width: 0;
+    outline: none;
+    padding: 3px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+   }
+   
+   button:disabled {
+    pointer-events: none;
+   }
+   
+   button:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+   }
+   
+   button:active {
+    box-shadow: none;
+    transform: translateY(0);
+   }
+
+   .headerLinks {
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Add some padding */
+    border: none; /* Remove border */
+    background-color: white; /* Set background color to white */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    position: relative; /* Position relative for the underline effect */
+  }
+  
+  .headerLinks::after {
+    content: ''; /* No text content */
+    display: block; /* Make it a block element */
+    width: 0; /* Initial width of the underline */
+    height: 2px; /* Height of the underline */
+    background: black; /* Color of the underline */
+    transition: width 0.3s; /* Smooth transition for the width */
+    position: absolute; /* Position it absolutely */
+    bottom: 0; /* Position it at the bottom */
+    left: 0; /* Align it to the left */
+  }
+  
+  .headerLinks:hover::after {
+    width: 100%; /* Expand the underline to full width on hover */
+  }
+
+  .custom-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 33px;
+    padding: 10px 38px 10px 16px;
+    background: #fff url("select-arrows.svg") no-repeat right 16px center;
+    background-size: 10px;
+    transition: border-color .1s ease-in-out,box-shadow .1s ease-in-out;
+    border: 0.125em solid #1A1A1A;
+      border-radius: 0.9375em;
+      box-sizing: border-box;
+  }
+  .custom-select:hover {
+    border: 1px solid #999;
+  }
+  .custom-select:focus {
+    border: 1px solid #999;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,.2);
+    outline: none;
+  }
+  /* remove default arrow in IE */
+  select::-ms-expand {
+    display:none;
+  }

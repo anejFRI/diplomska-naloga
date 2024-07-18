@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create event</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../css/create.css">
+    <header id="myHead"></header>
+</head>
+<body>
+    <form class="form__field" action="http://127.0.0.1:5000/create_event" method="POST" onsubmit="event_creation(event)">
+        <input placeholder="Naslov" type="text" id="title" name="title" required>
+        <br>
+        <textarea placeholder="Opis" type="textarea" id="description" name="description" rows="6" cols="50" required></textarea>
+        <br>
+        <input placeholder="Začetek" type="datetime-local" id="datetime_start" name="datetime_start" required>
+        <br>
+        <input placeholder="Konec (neobvezno)" type="datetime-local" id="datetime_end" name="datetime_end">
+        <br>
+        <br>
+        <input placeholder="Slika" type="file" id="id_image" name="id_image"/>
+        <br>
+        <select placeholder="Žanra" class="custom-select" name="genre" id="genre">
+            <option value="32">Techno</option>
+            <option value="33">Psytrance</option>
+            <option value="13">House</option>
+            <option value="1">Pop</option>
+            <option value="6">Rock</option>
+          </select>
+        <br>
+        <input type="hidden" name="id_user" id="id_user" value="">
+        <br>
+        <input placeholder="Kraj lokacije" type="text" id="city_location" name="city_location" required>
+        <br>
+        <input placeholder="Naslov lokacije" type="text" id="address_location" name="address_location" required>
+        <br>
+        <input placeholder="Koordinata lokacije" type="text" id="coordinate_location" name="coordinate_location" placeholder="46.055812, 14.504119" required>
+        <br>
+        <button class="btn-12" type="submit">Ustvari dogodek</button>
+    </form>
+</body>
+</html>
+<script>
+    function getSessionData() {
+    const jsonData = getCookie("session");
+    if (jsonData) {
+        try {
+            return JSON.parse(jsonData);
+        } catch (e) {
+            console.error("Error parsing session data:", e);
+            return null;
+        }
+    }
+    return null;
+    }
+
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for (let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+    const user_data = JSON.parse(getCookie('session'));
+
+    var input = document.getElementById('id_user');
+    input.value = user_data['id_user'];
+</script>
+<script src="../javascript/create_event.js"></script>
+<script src="../javascript/header.js"></script>
+
+
